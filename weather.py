@@ -17,7 +17,9 @@ def get_weather(city="London", apikey=None):
     if response.status_code == 200:
         return response.json()
     else:
-        raise Exception()
+        raise Exception(
+            f"openweathermap returned status code {response.status_code}"
+        )
 
 
 def format_response(response_json):
